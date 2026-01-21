@@ -1,0 +1,27 @@
+import { Link, useLocation } from "react-router-dom"
+import "../components/styles.css"
+import { useState, useEffect } from "react";
+
+
+function About() {
+    const location = useLocation();
+
+    useEffect(() => {
+            alert(localStorage.getItem("msg"));      
+        }, []);
+    return (
+        <>
+            <div className="head">
+                <Link to="/">Main</Link>
+                <Link to="/home">Home</Link>
+                <Link to="/about">About</Link>
+                <Link to="/Contact">Contact</Link>
+                <br></br>
+            </div>
+            <h1>This is the about page u know!!!!</h1>
+            <p>Message {location.state?.course}</p>
+        </>
+    )
+}
+
+export default About
